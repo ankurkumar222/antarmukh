@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isha Sādhanā | My Spiritual Journey — Organized Notes</title>
+<style>
+  :root{
+    --bg:#0a0e14; --bg-card:#10151d; --bg-card-2:#141a24;
+    --border:#1e2733; --border-soft:#182029;
+    --text:#dfe6ee; --text-dim:#7c8a9c; --text-dimmer:#566072;
+    --accent:#d4af37; --accent-dim:#8a7226; --accent-glow:rgba(212,175,55,0.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:radial-gradient(ellipse at top,#0d1220 0%,#0a0e14 60%);color:var(--text);font-family:'Georgia','Segoe UI',serif;line-height:1.7;}
+  ::selection{background:var(--accent-glow);color:var(--accent);}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,14,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
+  nav a{color:var(--text-dim);text-decoration:none;font-size:.74rem;letter-spacing:.5px;text-transform:uppercase;transition:color .2s;}
+  nav a:hover{color:var(--accent);}
+  nav .brand{color:var(--accent);font-size:1rem;margin-right:10px;font-weight:bold;}
+  header.hero{text-align:center;padding:90px 20px 60px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  header.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,var(--accent-glow),transparent 60%);pointer-events:none;}
+  .glyph{font-size:3.2rem;margin-bottom:10px;animation:breathe 6s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{opacity:.88;transform:scale(1);}50%{opacity:1;transform:scale(1.05);}}
+  header.hero h1{font-size:2.4rem;font-weight:400;letter-spacing:1px;}
+  header.hero .sub{color:var(--accent);font-size:.95rem;margin-top:10px;letter-spacing:3px;text-transform:uppercase;}
+  header.hero p.tagline{max-width:660px;margin:22px auto 0;color:var(--text-dim);font-style:italic;font-size:1rem;}
+  header.hero .commentary-note{margin-top:26px;display:inline-block;border:1px solid var(--border);border-radius:30px;padding:8px 20px;font-size:.76rem;color:var(--text-dimmer);}
+  section{padding:64px 20px;max-width:980px;margin:0 auto;}
+  section.wide{max-width:1100px;}
+  h2.section-title{font-size:1.8rem;font-weight:400;text-align:center;margin-bottom:6px;}
+  h2.section-title .tag{display:block;color:var(--accent);font-size:.95rem;letter-spacing:2px;margin-bottom:10px;}
+  p.section-intro{text-align:center;color:var(--text-dim);max-width:680px;margin:0 auto 36px;font-size:.96rem;}
+  hr.divider{border:none;border-top:1px dashed var(--border);margin:60px auto;max-width:980px;}
+
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:14px;}
+  .card-head{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;user-select:none;}
+  .card-num{width:42px;height:42px;flex-shrink:0;border:1px solid var(--accent-dim);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;}
+  .card-head .card-title{flex:1;color:var(--text);font-size:1rem;}
+  .card-head .card-title .card-sub{color:var(--text-dimmer);font-size:.76rem;margin-top:2px;}
+  .card-arrow{color:var(--text-dimmer);transition:transform .25s;font-size:.85rem;}
+  .card.open .card-arrow{transform:rotate(90deg);color:var(--accent);}
+  .card-body{max-height:0;overflow:hidden;transition:max-height .4s ease;border-top:1px solid var(--border-soft);}
+  .card.open .card-body{max-height:2400px;}
+  .card-body-inner{padding:20px 22px 24px;color:var(--text-dim);font-size:.92rem;}
+  .card-body-inner h5{color:var(--accent);font-weight:500;font-size:.82rem;letter-spacing:.5px;text-transform:uppercase;margin:16px 0 8px;}
+  .card-body-inner h5:first-child{margin-top:0;}
+  .card-body-inner ul,.card-body-inner ol{margin-left:20px;margin-bottom:8px;}
+  .card-body-inner li{margin-bottom:6px;}
+  .quote-line{color:var(--text);font-style:italic;padding:14px 16px;margin:10px 0;border-left:2px solid var(--accent-dim);background:var(--bg-card-2);border-radius:0 6px 6px 0;font-size:.94rem;}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+  .plaincard{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:22px;}
+  .plaincard .p-icon{font-size:1.4rem;margin-bottom:8px;display:block;}
+  .plaincard h4{color:var(--accent);font-weight:500;margin-bottom:8px;font-size:1rem;}
+  .plaincard p{color:var(--text-dim);font-size:.88rem;}
+  .plaincard ul,.plaincard ol{margin-left:18px;color:var(--text-dim);font-size:.88rem;}
+  .plaincard li{margin-bottom:5px;}
+
+  table.reftable{width:100%;border-collapse:collapse;margin:10px 0;font-size:.86rem;}
+  table.reftable th,table.reftable td{padding:8px 10px;border-bottom:1px solid var(--border-soft);text-align:left;}
+  table.reftable th{color:var(--accent);font-weight:500;font-size:.76rem;letter-spacing:.5px;text-transform:uppercase;}
+  table.reftable td{color:var(--text-dim);}
+
+  .staircase{display:flex;flex-direction:column;}
+  .stair-step{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:12px;position:relative;}
+  .stair-step .step-mv{color:var(--accent);font-size:1.02rem;margin-bottom:3px;}
+  .stair-step .step-meaning{color:var(--text-dimmer);font-size:.8rem;font-style:italic;margin-bottom:8px;}
+  .stair-step p{color:var(--text-dim);font-size:.9rem;}
+  .stair-step .step-num{position:absolute;top:-9px;left:-9px;background:var(--bg);border:1px solid var(--accent-dim);color:var(--accent);font-size:.68rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+
+  .lineage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+  .lineage-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px;cursor:pointer;transition:border-color .2s;}
+  .lineage-card:hover{border-color:var(--accent-dim);}
+  .lineage-card h4{color:var(--accent);font-size:.94rem;margin-bottom:6px;}
+  .lineage-card p{font-size:.82rem;color:var(--text-dim);}
+
+  .quiz-list{display:flex;flex-direction:column;gap:10px;}
+  .quiz-item{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px 20px;cursor:pointer;}
+  .quiz-q{color:var(--text);font-size:.94rem;display:flex;justify-content:space-between;gap:10px;}
+  .quiz-q .flip-hint{color:var(--text-dimmer);font-size:.7rem;text-transform:uppercase;white-space:nowrap;}
+  .quiz-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--accent);font-size:.88rem;}
+  .quiz-item.open .quiz-a{max-height:300px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);}
+  .quiz-item.open .flip-hint{color:var(--accent);}
+
+  .closing{text-align:center;padding:80px 20px 100px;border-top:1px solid var(--border);}
+  .closing .final{font-size:1.4rem;color:var(--accent);margin-bottom:10px;}
+  .closing p{color:var(--text-dim);max-width:620px;margin:16px auto 0;}
+  .closing .signoff{margin-top:36px;color:var(--text-dimmer);font-size:.8rem;letter-spacing:1px;}
+  footer.page-footer{text-align:center;padding:24px;color:var(--text-dimmer);font-size:.76rem;border-top:1px solid var(--border);}
+  footer.page-footer a{color:var(--accent-dim);}
+  .note-box{background:var(--bg-card-2);border:1px solid var(--border-soft);border-radius:8px;padding:14px 18px;font-size:.84rem;color:var(--text-dimmer);margin-top:14px;}
+  @media (max-width:640px){header.hero h1{font-size:1.9rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">🪔 Isha Sādhanā</span>
+  <a href="index.html">← Sadhana Home</a>
+  <a href="#rules">Five Rules</a>
+  <a href="#rhythm">Daily Rhythm</a>
+  <a href="#sadhanas">Six Sādhanās</a>
+  <a href="#body">The Body</a>
+  <a href="#karma">Karma</a>
+  <a href="#limbs">Eight Limbs</a>
+  <a href="#sensation">Sensation</a>
+  <a href="#shoonya">Śūnya</a>
+</nav>
+
+<header class="hero">
+  <div class="glyph">🪔</div>
+  <h1>My Spiritual Journey</h1>
+  <div class="sub">Notes on Inner Engineering &amp; the Isha Path</div>
+  <p class="tagline">Not a philosophy to admire from a distance, but a working system — rules to live by,
+  sādhanās to practice, and a single question underneath all of it: can the friction between how life is
+  and how the mind wants it to be simply be dropped?</p>
+  <div class="commentary-note">Organized from personal notes on Sadhguru's teachings — reference material for daily practice, not a public teaching text</div>
+</header>
+
+<section id="opening">
+  <h2 class="section-title"><span class="tag">सर्वं मम नियमः</span>The Root Teaching</h2>
+  <p class="section-intro">Everything below branches from one recognition, repeated in a hundred forms across the
+  notes: you don't control what happens. You control what happens <em>in</em> you when it happens.</p>
+  <div class="quote-line">"You cannot always choose what happens around you. But you can choose how you
+  experience what happens." — the whole of Inner Engineering compressed into one sentence.</div>
+</section>
+
+<hr class="divider">
+
+<section id="rules" class="wide">
+  <h2 class="section-title"><span class="tag">पञ्च नियमाः</span>The Five Rules of Inner Engineering</h2>
+  <p class="section-intro">Five working principles — not beliefs to hold, but rules to actually run your
+  inner life by. Each one dismantles a small piece of the illusion that the outside world is what's in
+  charge of your experience.</p>
+  <div id="rulesList"></div>
+</section>
+
+<hr class="divider">
+
+<section id="rhythm">
+  <h2 class="section-title"><span class="tag">दिनचर्या</span>The Daily Rhythm</h2>
+  <p class="section-intro">Inner Engineering isn't only inward — it's built on a scaffolding of ordinary,
+  repeatable daily structure. The notes are precise about this.</p>
+  <table class="reftable">
+    <tr><th>Time / Trigger</th><th>Practice</th><th>Why</th></tr>
+    <tr><td>First thing on waking</td><td>Neem &amp; turmeric with hot water</td><td>Simple internal cleansing, before anything else enters the system</td></tr>
+    <tr><td>Morning</td><td>Shakti Chalana Kriya (~45–60 min)</td><td>Foundational energy practice — always paired with Śūnya, since sustained attention takes years to build</td></tr>
+    <tr><td>Once daily, morning</td><td>One full meal</td><td>A lighter system is a more available one</td></tr>
+    <tr><td>3pm – 8am</td><td>No food</td><td>Extended natural fasting window</td></tr>
+    <tr><td>Evening, 6pm</td><td>Surya Kriya or Angamardana</td><td>Sustaining energy through the day's second half</td></tr>
+    <tr><td>Before sleep</td><td>The Before-Sleep sādhanā (below)</td><td>Treating sleep as a conscious release, not just unconsciousness</td></tr>
+    <tr><td>Every hour</td><td>A brief reminder — of a rule, a name, a breath</td><td>Awareness needs re-triggering; it doesn't hold itself by default</td></tr>
+  </table>
+  <div class="note-box">Rule from the notes: "I have to be average in earning. I have to be exceptional in Yoga
+  and Śūnya — top priority." A stated ordering of what actually matters, not a rejection of ordinary life.</div>
+</section>
+
+<hr class="divider">
+
+<section id="sadhanas" class="wide">
+  <h2 class="section-title"><span class="tag">षट् साधनाः</span>Six Sādhanās for Living</h2>
+  <p class="section-intro">Concrete, repeatable practices — each one targeting a specific piece of unconscious
+  identification. Open each to see the practice and what it's actually training.</p>
+  <div id="sadhanaList"></div>
+</section>
+
+<hr class="divider">
+
+<section id="body" class="wide">
+  <h2 class="section-title"><span class="tag">देहद्वारम्</span>The Body as the First Doorway</h2>
+  <p class="section-intro">"If you cannot observe your physical body, how will you observe subtler dimensions
+  of yourself?" The whole Haṭha Yoga structure in the notes exists to answer that question in practice.</p>
+  <div class="grid2">
+    <div class="plaincard">
+      <span class="p-icon">🌀</span>
+      <h4>Shakti Chalana Kriya</h4>
+      <p>A structured energy practice — Nāda Kriya (mudra + sound), breath-ratio cycles across Chin/Chinmaya/
+      Ādi/Merudaṇḍa mudrās, Sukha Prāṇāyāma, and the Pañca Sahita Kriya organ sequence (below). Built to
+      strengthen "the very foundations of the system," and deliberately taught alongside Śūnya, since holding
+      full attention on a 40–60 minute breath sequence takes years to develop.</p>
+      <div class="note-box">This is a structured practice traditionally learned under a certified Isha teacher — noted here for personal reference, not as a self-teaching guide.</div>
+    </div>
+    <div class="plaincard">
+      <span class="p-icon">✨</span>
+      <h4>Shambhavi Mahāmudrā</h4>
+      <p><em>Mahāmudrā</em> — a "seal" that locks and redirects energy that would otherwise dissipate through
+      sensory reaction. Every sensory engagement normally costs energy; the seal reverses that into a net
+      gain. The notes cite two measured effects: a significantly higher Cortisol Awakening Response
+      (greater wakefulness) and elevated BDNF (supporting cognitive health) in practitioners — with 90 days
+      of consistent practice cited as enough to meaningfully shift baseline wakefulness.</p>
+    </div>
+    <div class="plaincard">
+      <span class="p-icon">🦴</span>
+      <h4>Yoga Namaskar &amp; the Spine</h4>
+      <p>The spine treated not as a bone structure but as the foundation of perception and communication in
+      the system. A seven-step sequence built to keep it flexible — preventing collapse with age, easing nerve
+      compression, and unblocking emotional stagnation. This is named directly as a path toward
+      <em>citta-vṛtti-nirodha</em> — Patañjali's phrase for the stilling of the mind's own fluctuations.</p>
+    </div>
+    <div class="plaincard">
+      <span class="p-icon">👁️</span>
+      <h4>Ākāśī Mudrā</h4>
+      <p>A perception-sharpening technique: locating a point of convergence roughly 17–19 inches from the
+      brow center, at an 11-degree angle, and holding vision there. The stated aim isn't to see anything
+      specific — only to strengthen the etheric element (ākāśa) and, through it, the raw capacity to perceive.</p>
+    </div>
+    <div class="plaincard">
+      <span class="p-icon">🧘</span>
+      <h4>21 Āsanas — the Preparatory Set</h4>
+      <p>Of 84 classical postures, 21 are used as the entry set, split into standing, prone, supine, and seated
+      groups. Their function is explicitly preparatory: readying the "physical" and "karmic/mental" bodies
+      before any real energy work, since boosting the energy body without that readiness risks strain. Bhūta
+      Śuddhi — elemental purification — works alongside this, harmonizing the system with air, fire, earth,
+      and water before the boundary between "self" and "surroundings" is allowed to thin.</p>
+    </div>
+    <div class="plaincard">
+      <span class="p-icon">🖐️</span>
+      <h4>Releasing Karma Through the Body</h4>
+      <p>A simpler daily practice for when formal Haṭha Yoga isn't available: eyes closed, gently stretch one
+      hand, observing every sensation without judgment; once familiar, extend this to the whole body, allowing
+      subtle, non-mechanical movement. The stated aim is releasing chemical deposits that accumulate at the
+      body's 114 chakras, joints, and nodes — karma is described as operating on mind, chemistry, <em>and</em>
+      raw sensation, which is why willpower alone rarely breaks a habit that has become physiological.</p>
+    </div>
+  </div>
+
+  <div class="card-body-inner" style="max-width:800px;margin:30px auto 0;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:24px 28px;">
+    <h5>Pañca Sahita Kriya — Organ Breath Ratios (reference)</h5>
+    <p style="margin-bottom:10px;">Five aspects of existence synchronized through breath — body, prāṇa, sensory
+    mind, intellect, and memory. Ratios are Inhale–Hold–Exhale–Hold, in counts:</p>
+    <table class="reftable">
+      <tr><th>Organ</th><th>Ratio</th><th>Mudrā</th></tr>
+      <tr><td>Lungs</td><td>4–16–8–4</td><td>Chin → Chinmaya → Ādi (3 cycles each)</td></tr>
+      <tr><td>Liver</td><td>4–4–16–8</td><td>Chin (3 cycles)</td></tr>
+      <tr><td>Stomach</td><td>8–4–4–16</td><td>Chin (3 cycles)</td></tr>
+      <tr><td>Kidney</td><td>16–8–4–4</td><td>Chin (3 cycles)</td></tr>
+      <tr><td>Heart</td><td>4–16–8</td><td>Chinmaya (3 cycles)</td></tr>
+    </table>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="karma" class="wide">
+  <h2 class="section-title"><span class="tag">कर्मबीजानि</span>Karma — From Seed to Freedom</h2>
+  <p class="section-intro">Not reward and punishment from an external ledger-keeper — karma, in these notes,
+  is simply the mechanism by which unconscious action becomes tomorrow's compulsion.</p>
+
+  <table class="reftable">
+    <tr><th>Stage</th><th>Yogic Term</th><th>Meaning</th></tr>
+    <tr><td>Seed</td><td>Saṃskāra</td><td>A stored impression, left by action plus emotion</td></tr>
+    <tr><td>Sprout</td><td>Vāsanā</td><td>A tendency or urge arising from that impression</td></tr>
+    <tr><td>Tree</td><td>Habit / Action</td><td>Repeated behavior, grown from the tendency</td></tr>
+    <tr><td>Fruit</td><td>Experience</td><td>Pleasure, pain, success, suffering — the harvest</td></tr>
+    <tr><td>New seeds</td><td>Fresh saṃskāras</td><td>The fruit itself plants the next cycle</td></tr>
+  </table>
+
+  <div class="grid2" style="margin-top:20px;">
+    <div class="plaincard">
+      <h4>Three Intensifiers</h4>
+      <p><strong>Repetition</strong> deepens the groove. <strong>Emotion</strong> — fear, desire, anger,
+      attachment — plants seeds fast and deep. <strong>Identification</strong> — the moment a thought becomes
+      "this is me" — hardens the seed into something that resists change.</p>
+    </div>
+    <div class="plaincard">
+      <h4>Karma as Old Software</h4>
+      <p>Written unconsciously, continuously updated, running habits and reactions without asking permission.
+      The starting point of freedom is simply recognizing the software as software — not identity. Once seen,
+      it can be rewritten; while unseen, it only repeats.</p>
+    </div>
+    <div class="plaincard">
+      <h4>The Psychosomatic Loop</h4>
+      <p>Every mental fluctuation triggers a chemical reaction; the chemical reaction produces a physical
+      sensation; the sensation reinforces the original fluctuation. This loop — not just belief or willpower —
+      is what makes a pattern feel like "just who I am."</p>
+    </div>
+    <div class="plaincard">
+      <h4>Karma Samyama</h4>
+      <p>Sustained, silent awareness applied to action itself — seeing clearly <em>why</em> you act, not only
+      what you do. Fully seen karma cannot blindly repeat; without emotional fuel, old seeds burn out on their
+      own. The working sentence: "I am not punished by karma. I am educated by it."</p>
+    </div>
+  </div>
+
+  <div class="quote-line">"Action done in awareness leaves no chain behind." — karma stops binding the moment
+  it stops being unconscious.</div>
+
+  <div class="grid2" style="margin-top:16px;">
+    <div class="plaincard">
+      <h4>The Five Kośas &amp; Karma's Reach</h4>
+      <p>Karma has a grip on the physical (annamaya), mental (manomaya), and energetic (prāṇamaya) layers of
+      existence — but loses that grip entirely in the etheric (vijñānamaya) and bliss (ānandamaya) layers.
+      Freedom, in this framing, isn't erasing karma — it's stepping into the two dimensions cause-and-effect
+      was never able to reach in the first place.</p>
+    </div>
+    <div class="plaincard">
+      <h4>Cosmic Rhythm</h4>
+      <p>The notes distinguish a stable solar cycle (harmony, when aligned with) from shorter lunar and
+      3–6-month cycles, which — repeated unconsciously — tend toward psychological instability. Yogic practice
+      is framed partly as a re-alignment toward the steadier rhythm.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="limbs" class="wide">
+  <h2 class="section-title"><span class="tag">अष्टाङ्गयोगः</span>The Eight Limbs, and Where Samyama Lives</h2>
+  <p class="section-intro">A progressive inward journey — from how you live among people, to how awareness
+  finally rests in itself, needing nothing further.</p>
+  <div class="staircase">
+    <div class="stair-step"><div class="step-num">1</div><div class="step-mv">Yama — social ethics</div><div class="step-meaning">Ahiṃsā, satya, asteya, brahmacharya, aparigraha</div><p>The outer discipline — how you relate to others. The behavioral foundation everything else is built on.</p></div>
+    <div class="stair-step"><div class="step-num">2</div><div class="step-mv">Niyama — personal observance</div><div class="step-meaning">Śauca, santoṣa, tapas, svādhyāya, Īśvara-praṇidhāna</div><p>The inner discipline — how you relate to yourself. Inner alignment before any technique is introduced.</p></div>
+    <div class="stair-step"><div class="step-num">3</div><div class="step-mv">Āsana — posture</div><div class="step-meaning">A steady, comfortable body</div><p>The goal is stability, not gymnastics — preparing the body simply to be able to sit.</p></div>
+    <div class="stair-step"><div class="step-num">4</div><div class="step-mv">Prāṇāyāma — breath regulation</div><div class="step-meaning">Balancing energy and the nervous system</div><p>Prepares the mind, the way āsana prepared the body.</p></div>
+    <div class="stair-step"><div class="step-num">5</div><div class="step-mv">Pratyāhāra — withdrawal of senses</div><div class="step-meaning">The bridge between outer and inner yoga</div><p>The senses keep working — eyes still see, ears still hear — but attention stops being dragged outward by them. Not suppression, not force: like a turtle drawing in its legs, then extending them again when safe. This is non-engagement, not resistance — and without it, concentration simply leaks.</p></div>
+    <div class="stair-step"><div class="step-num">6</div><div class="step-mv">Dhāraṇā — concentration</div><div class="step-meaning">Effort is still present</div><p>Holding attention on one object — breath, mantra, chakra, even karma itself.</p></div>
+    <div class="stair-step"><div class="step-num">7</div><div class="step-mv">Dhyāna — meditation</div><div class="step-meaning">Effort thins out</div><p>Continuous, uninterrupted flow of attention — no breaks, no jumping between objects.</p></div>
+    <div class="stair-step"><div class="step-num">8</div><div class="step-mv">Samādhi — absorption</div><div class="step-meaning">No effort, only knowing</div><p>Observer, object, and process merge; only the object shines in awareness.</p></div>
+  </div>
+  <div class="plaincard" style="max-width:800px;margin:24px auto 0;">
+    <h4>Samyama</h4>
+    <p>When dhāraṇā, dhyāna, and samādhi are applied together, seamlessly, to the same object, Patañjali calls
+    this combined state <strong>samyama</strong>. It is explicitly a tool, not a starting point — placed last
+    in the sequence for a reason: without yama-niyama it amplifies ego; without pratyāhāra, concentration
+    leaks before it can even begin. Ethical → physiological → psychological → meditative → absorptive — the
+    order is the safeguard.</p>
+  </div>
+
+  <div class="grid2" style="margin-top:20px;">
+    <div class="plaincard">
+      <h4>Sādhana</h4>
+      <p>What you <em>do</em> to transform yourself — discipline, meditation, breath, self-observation. Inner
+      mastery through conscious practice. Sādhana trains the mind and the body.</p>
+    </div>
+    <div class="plaincard">
+      <h4>Upāsanā</h4>
+      <p>How you <em>relate</em> to the divine — devotion, chanting, offering, surrender. Upāsanā softens the
+      heart. Sādhana without upāsanā can turn dry; upāsanā without sādhana can stay merely emotional. The
+      tradition asks for both: sharpness and softness together.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="sensation" class="wide">
+  <h2 class="section-title"><span class="tag">वेदना द्वारम्</span>Sensation — The Doorway Every Tradition Agrees On</h2>
+  <p class="section-intro">The single most striking thread running through the notes: nine entirely different
+  Indian (and one Buddhist) lineages, arriving at the same instruction through completely different language.
+  Tap a tradition.</p>
+  <div class="lineage-grid" id="lineageGrid"></div>
+  <div class="quote-line" style="margin-top:24px;">Sensation → Awareness → Freedom. Every time attention returns
+  to what's actually happening in the body — not the story about it — the same doorway that the Upanishads,
+  the Gītā, Patañjali, the Buddha, Ramaṇa, Kashmir Śaivism, the Siddhars, and Vivekānanda all separately
+  pointed toward opens again.</div>
+</section>
+
+<hr class="divider">
+
+<section id="brahmacharya">
+  <h2 class="section-title"><span class="tag">ब्रह्मचर्यम्</span>Brahmacharya — Conscious Energy</h2>
+  <p class="section-intro">One of the more demanding disciplines in the notes, treated with real nuance rather
+  than blanket prohibition.</p>
+  <div class="grid2">
+    <div class="plaincard">
+      <h4>Why It's Emphasized</h4>
+      <p>Advaita holds that realizing Brahman requires a mind that is clear and undistracted. Restlessness
+      generated by unexamined desire (vikṣepa) works directly against the steadiness self-inquiry needs — so
+      the discipline isn't about morality, it's about the specific mental clarity that deep contemplation
+      requires.</p>
+    </div>
+    <div class="plaincard">
+      <h4>Ojas &amp; Tejas</h4>
+      <p>In this framework, vital energy conserved through restraint is described as transmuting into ojas —
+      a subtler strength sharpening intellect, memory, and will. Śaṅkarācārya's own Vivekacūḍāmaṇi names
+      brahmacharya as foundational to jñāna: without this self-restraint, the mind stays impure enough that
+      truth remains out of reach.</p>
+    </div>
+    <div class="plaincard">
+      <h4>Householder vs. Renunciate</h4>
+      <p>The notes are careful to distinguish these: for a householder (gṛhastha), brahmacharya means
+      moderation and conscious relationship, not literal celibacy. For a monk (sannyāsī), it is closer to
+      complete restraint, since worldly life itself has already been set aside.</p>
+    </div>
+    <div class="plaincard">
+      <h4>The Practical Core</h4>
+      <p>Less about suppression, more about redirection: noticing thoughts rather than being run by them,
+      reducing unnecessary triggers, and channeling the same energy into focused, creative, or contemplative
+      work. The discipline is framed as building capacity, not merely restricting behavior.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="practical">
+  <h2 class="section-title"><span class="tag">समस्या-समाधानम्</span>A Working Template — Problem to Practice</h2>
+  <p class="section-intro">The notes include a simple, repeatable format for turning any struggle into a
+  concrete practice — worth keeping as a template, independent of the specific examples.</p>
+  <div class="plaincard" style="max-width:800px;margin:0 auto;">
+    <h4>The Four-Question Format</h4>
+    <ol>
+      <li><strong>What problem am I actually facing?</strong> — named plainly, without dramatizing it.</li>
+      <li><strong>What's the real solution — not a vague intention, but a specific practice?</strong></li>
+      <li><strong>When exactly does it happen — what time, what trigger?</strong></li>
+      <li><strong>How will I know it's working?</strong></li>
+    </ol>
+    <p style="margin-top:10px;">Applied in the notes to energy dips, food timing, communication skill, and
+    time management — each resolved into one or two concrete daily actions rather than a resolution to
+    "try harder." The closing reminder attached to this section is worth keeping close: <em>"You do not
+    rise to the level of your goals. You fall to the level of your systems."</em> — James Clear, quoted
+    alongside Churchill's line on the courage to continue.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="shoonya">
+  <h2 class="section-title"><span class="tag">शून्यम्</span>Śūnya — Where the Outer World Ends</h2>
+  <p class="section-intro">Everything above eventually points here — the practice the notes name as the
+  actual top priority, above every other sādhanā.</p>
+  <div class="plaincard" style="max-width:800px;margin:0 auto;">
+    <p>Śūnya asks for something specific: close the eyes, and let the only things that exist be breath,
+    heartbeat, and the workings of prāṇa within. Everything outside becomes, in that moment, only
+    <em>imagery</em> — not because the world is unreal, but because it is simply not where this particular
+    attention is being placed.</p>
+    <div class="quote-line">"Move your attention to how life works within you. If you make it your number
+    one priority, everything within you will organize itself accordingly."</div>
+    <p>The notes are direct about what happens without this: socially you may still get somewhere; physically
+    the body proceeds toward the grave regardless; but the mind, left unfocused, only goes round and round.
+    Only turning attention to what's fundamental — life as it is actually happening, right now, inside —
+    produces real movement. Everything else in this document is scaffolding built to support exactly this
+    one, simple, repeated turning inward.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="recall">
+  <h2 class="section-title"><span class="tag">स्वाध्यायः</span>Active Recall</h2>
+  <p class="section-intro">Tap a question to reveal the answer.</p>
+  <div class="quiz-list" id="quizList"></div>
+</section>
+
+<section class="closing">
+  <div class="final">सर्वं मम नियमः</div>
+  <p style="color:var(--accent);font-style:italic;">"All rules in this existence are my rules."</p>
+  <p>Not a claim that the world bends to you — a recognition that your inner experience is entirely
+  self-authored, so the only rules that actually govern your life are the ones you write within yourself.
+  Everything else — the daily rhythm, the six sādhanās, the body work, the karma model, the eight limbs,
+  the return to sensation — is simply the long, patient practice of learning to write those rules well.</p>
+  <div class="signoff">इति साधना टिप्पणी — Personal notes on the Isha / Inner Engineering path</div>
+</section>
+
+<footer class="page-footer">
+  Part of the <a href="index.html">Sadhana</a> project — a personal space for spiritual study and reflection
+</footer>
+
+<script>
+  // FIVE RULES
+  const rules = [
+    { title: "All Rules in This Existence Are My Rules", sub: "Dropping resistance to \u2018what is\u2019", body: `
+      <h5>The Core Shift</h5>
+      <p>Not that the outside world obeys you — that your inner experience is entirely self-created, so the
+      rules that actually govern your life are the ones you generate within, not the ones imposed from
+      outside. You cannot always make the outside happen your way. What happens inside must happen your way.</p>
+      <h5>Where This Shows Up</h5>
+      <ul>
+        <li>Traffic, delay, heat — identical for two people, opposite inner experience</li>
+        <li>An insult lands only if you let their words enter your system — otherwise it's their karma, not your suffering</li>
+        <li>A failed plan: "life can give me success or failure, but it cannot take away my inner balance"</li>
+        <li>A loved one behaving unexpectedly — the irritation is a micro-resistance to wanting them to behave your way</li>
+      </ul>
+      <div class="quote-line">"You don't control life. You control the way you hold life within you. When
+      that becomes flawless, the outside stops being a threat."</div>
+    `},
+    { title: "This Moment Is All There Is", sub: "The only place life is actually happening", body: `
+      <h5>The Ocean-Wave Image</h5>
+      <p>A wave rises, shines, breaks, disappears. The previous wave is already gone; the next hasn't come. Only
+      the wave happening now is fully alive. Miss it, and you miss the only place life is happening at all.</p>
+      <h5>Why the Mind Resists This</h5>
+      <p>Most people are never fully present, because the mind unconsciously assumes the next moment must
+      matter more than this one — which means the whole of life, which is never not now, gets missed.
+      Anxiety before an MRI, dread before exam results, distraction while a child is talking — in each case
+      nothing has actually happened yet in the present; the suffering is manufactured entirely by mental
+      travel into imagined past or future.</p>
+      <div class="quote-line">"Fear is always in the next moment. Regret is always in the previous moment.
+      But peace exists only in the present moment."</div>
+    `},
+    { title: "Your Ability to Respond Is Limitless", sub: "Action is bounded. Response never is.", body: `
+      <h5>The Distinction</h5>
+      <p>You may not control what happens, who acts, or how events unfold — action is always limited. But your
+      inner response to any of it is infinite: grief or acceptance, bitterness or wisdom, panic or
+      reinvention. The situation is fixed. Who you become because of it is not.</p>
+      <h5>Sadhguru-Style Formulations</h5>
+      <ul>
+        <li>"If you react, the world decides who you are. If you respond, you decide who you are."</li>
+        <li>"Your life is not decided by what happens, but by how consciously you respond."</li>
+        <li>"Reaction is slavery. Response is freedom."</li>
+      </ul>
+      <p>The deepest version of this: limitless response is only available once reaction stops coming from
+      memory, ego, or fear — and starts coming from plain awareness, which has no edges.</p>
+    `},
+    { title: "I Am Not the Body, I Am Not Even the Mind", sub: "A shift from what you have to who you are", body: `
+      <h5>Three Proofs Offered in the Notes</h5>
+      <ul>
+        <li><strong>The changing body:</strong> not one cell is the same as it was at five years old, yet a continuity of "me" persists — the witness, not the body, is what stays constant.</li>
+        <li><strong>Watching thoughts:</strong> if you can observe a thought the way you observe a cloud, the thought is an object, and you are the witness — not the thought itself.</li>
+        <li><strong>Deep sleep:</strong> mind, personality, and memory all go offline, yet on waking you say "I slept well" — something remained alert even when thought was entirely absent.</li>
+      </ul>
+      <h5>Two Classical Images</h5>
+      <p><strong>The costume and the actor</strong> — a king's robes command bows on stage; the same man walking
+      home afterward in plain clothes draws none, and suffers nothing from the difference, because he was
+      never actually the costume. <strong>The two birds</strong> (from the Upanishads) — one eats the fruit of
+      the tree, sweet and bitter both; the other simply watches. Identifying with the watching bird is where
+      effortlessness begins.</p>
+    `},
+    { title: "Be a Mother to the World", sub: "Inclusiveness as nature, not effort", body: `
+      <h5>What It Does Not Mean</h5>
+      <p>Not sentimentality, not over-giving, not carrying everyone's burdens. A mother doesn't love because
+      the child is perfect — she loves because that is simply her nature. The rule asks the same of your
+      inner disposition toward everyone, not as an act, but as a settled way of being.</p>
+      <h5>What Changes</h5>
+      <ul>
+        <li>Rudeness from others stops corrupting your inner sweetness, the way a mother sees a tantrum, not an insult</li>
+        <li>Arrogance in someone else reads as "he must be hurting somewhere," not as a personal affront</li>
+        <li>You remain the steady point in chaos — not by suppressing emotion, but because your well-being was never outsourced to the situation</li>
+        <li>Giving stops being transactional — no tracking of return, simply because that's the nature now in place</li>
+      </ul>
+      <div class="quote-line">"A mother doesn't love because the child deserves it. She loves because that's
+      her nature. When this becomes your nature, you become a mother to the world."</div>
+    `}
+  ];
+  const rulesList = document.getElementById('rulesList');
+  rules.forEach((r,i) => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `<div class="card-head"><div class="card-num">${i+1}</div>
+      <div class="card-title">${r.title}<div class="card-sub">${r.sub}</div></div>
+      <div class="card-arrow">\u25B6</div></div>
+      <div class="card-body"><div class="card-body-inner">${r.body}</div></div>`;
+    div.querySelector('.card-head').addEventListener('click', () => div.classList.toggle('open'));
+    rulesList.appendChild(div);
+  });
+
+  // SIX SADHANAS
+  const sadhanas = [
+    { title: "Before Sleep — Rehearsing Death Nightly", sub: "Working out karma each night", body: `
+      <p>Sit cross-legged on the bed, eyes closed. Remind yourself that everything you take to be "you" —
+      nationality, race, relationships, likes and dislikes, even the body — is accumulation, not essence.
+      Imagine you have two minutes to live. Set aside everything that is not you: sensations, thoughts,
+      emotions. Leave the body sitting, and simply lie back with eyes closed, going to bed as if dying.</p>
+      <p><strong>What it trains:</strong> if practiced nightly, a real amount of karma is said to work itself
+      out each night. Fear may arise the first times; it passes. Over time, compulsive behavior gives way to
+      conscious existence — the notes call this being "reborn daily."</p>
+    `},
+    { title: "The Phone Reminder — Equal Involvement", sub: "Dissolving hierarchy in attention", body: `
+      <p>Be consciously involved with everything: the food eaten, the water drunk, the ground walked on, the
+      people encountered — without distinction. If sustaining this is difficult, begin with the gaze you'd
+      give someone whose presence evokes your noblest emotion, then extend that exact gaze to everyone and
+      everything else. Hourly phone reminders — a chant, a tune — help re-anchor the practice through the day.</p>
+      <p><strong>What it trains:</strong> selective involvement is named directly as the basis of bondage.
+      Equal involvement — God and a frog met with the same gaze — is described as capable of producing an
+      unimaginably blissful state within as little as twenty-four hours of sustained practice.</p>
+    `},
+    { title: "Recreate Yourself", sub: "Creativity beyond compulsion", body: `
+      <p>Drop the self-image completely — this alone produces a state of real freedom. From there,
+      consciously construct a new one: start with the skeletal structure, move into flesh and blood, and
+      visualize exactly how you want to be experienced by others — the nature of your thought and emotion,
+      your impact on the world. Then test it: is this new image more capable, more loving, more blissful than
+      the old one?</p>
+      <p><strong>What it trains:</strong> most human creativity is compulsive, not free — shaped by
+      limitation rather than chosen. Recognizing the self-image as fully droppable and fully rebuildable is
+      the notes' description of the power to consciously craft, rather than passively inherit, who you are.</p>
+    `},
+    { title: "Mother to the World — the Resolve", sub: "Fixing intention at the widest possible scope", body: `
+      <p>A simple, stated resolve: decide to be a mother to the world. See everyone as your own — no one
+      excluded from the clan. Test it against the sweetness you feel seeing your own child return home from
+      school; can that same emotion extend to a stranger on the street?</p>
+      <p><strong>What it trains:</strong> this single intention is described as capable of liberating a person
+      from a large share of ordinary agitation and negativity — because once everything and everyone is
+      experienced as yours, external rules become unnecessary. The identity itself has changed.</p>
+    `},
+    { title: "Testing Vāsanā", sub: "Locating your deepest compulsions", body: `
+      <p>Deliberately withdraw from what you love most — a food, a person, an activity — for a period, and
+      notice the intensity of discomfort that surfaces. That intensity is a direct measure of the vāsanā's
+      depth. Then practice deliberate delay: pause a few moments before a craved meal, a few moments before
+      greeting someone eagerly anticipated — gradually extending the pause from minutes to hours to a full day.</p>
+      <p><strong>What it trains:</strong> the distinction between consciousness (the nature of existence) and
+      compulsiveness (mere behavior). Each deliberate pause is a small act of aligning with the former instead
+      of being run by the latter — weakening the compulsive pattern over repeated practice.</p>
+    `},
+    { title: "Testing Runanubandha", sub: "Physical memory and karmic attachment to place", body: `
+      <p>Sit alone in an unfamiliar place, on unfamiliar furniture, and simply observe: how comfortable is the
+      body? Is there restlessness, an urge to be elsewhere? The favorite armchair, the same seat at the dining
+      table every time — these everyday habits often carry more karmic weight than mere convenience.</p>
+      <p><strong>What it trains:</strong> the notes frame accumulating runanubandha as a kind of movement
+      backward in spiritual evolution — comfort curdling into territoriality. This is historically why
+      monasteries and ashrams exist as spaces deliberately free of such bonds, and why some traditions took a
+      vow (kṣetra-sannyāsa) never to leave a single consecrated space — removing physical memory's grip
+      entirely rather than merely managing it.</p>
+    `}
+  ];
+  const sadhanaList = document.getElementById('sadhanaList');
+  sadhanas.forEach((s,i) => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `<div class="card-head"><div class="card-num">${i+1}</div>
+      <div class="card-title">${s.title}<div class="card-sub">${s.sub}</div></div>
+      <div class="card-arrow">\u25B6</div></div>
+      <div class="card-body"><div class="card-body-inner">${s.body}</div></div>`;
+    div.querySelector('.card-head').addEventListener('click', () => div.classList.toggle('open'));
+    sadhanaList.appendChild(div);
+  });
+
+  // LINEAGE / SENSATION
+  const lineages = [
+    { name: "Upanishads", desc: "\u201cYou cannot see the seer of seeing.\u201d Every sensation seen means you are not that sensation \u2014 you are the seer of it. Neti, neti: not this, not this." },
+    { name: "Bhagavad G\u012bt\u0101", desc: "Yoga is samatvam \u2014 equanimity. Krishna: \u201cBe a witness of all changes.\u201d Equanimity is built in the nervous system, through sensation, not through argument." },
+    { name: "Yoga S\u016btras", desc: "\u201cYoga is the stilling of the mind\u2019s fluctuations... then the Seer rests in its own nature.\u201d The path there runs through pratyah\u0101ra and dh\u0101ra\u1e47\u0101 \u2014 attention brought to subtle sensation." },
+    { name: "The Buddha", desc: "Vipassan\u0101, compressed: \u201cWalk the path through observing sensations.\u201d Sensation arises, mind reacts, reaction creates karma \u2014 observation without reaction breaks the chain." },
+    { name: "Ramana Maharshi", desc: "\u201cAttention to the \u2018I\u2019 removes the \u2018not-I\u2019.\u201d Noticing \u2014 this sensation is not me, this fear is not me \u2014 is \u0101tma-vic\u0101ra practiced simply." },
+    { name: "Kashmir Shaivism", desc: "The universe as spanda \u2014 the dance of subtle impulses. Awareness of sensation leads to awareness of subtle energy, then of Shiva within." },
+    { name: "Tamil Siddhars", desc: "\u201cWithin this body is the universe.\u201d Don\u2019t escape the body \u2014 enter it. Every sensation is prasad, a sacred offering." },
+    { name: "Vivekananda", desc: "\u201cStand up and say: I am the witness.\u201d Reached not by reading about it, but by peeling layer after layer \u2014 sensation, thought, emotion \u2014 until what remains is what was never any of them." },
+    { name: "Sadhguru", desc: "\u201cIf you cannot observe your physical body, how will you observe subtler dimensions of yourself?\u201d Body \u2192 breath \u2192 mind \u2192 energy \u2192 consciousness \u2014 sensation is the connecting thread through all five." }
+  ];
+  const lineageGrid = document.getElementById('lineageGrid');
+  lineages.forEach(l => {
+    const div = document.createElement('div');
+    div.className = 'lineage-card';
+    div.innerHTML = `<h4>${l.name}</h4><p>${l.desc}</p>`;
+    lineageGrid.appendChild(div);
+  });
+
+  // QUIZ
+  const quiz = [
+    { q: "What does \u201call rules in this existence are my rules\u201d actually mean in Inner Engineering?", a: "Not that the world bends to you \u2014 that your inner experience is entirely self-created, so the only rules that truly govern your life are the ones you generate within yourself, not those imposed by outside events." },
+    { q: "Why is Shakti Chalana Kriya always taught alongside \u015a\u016bnya?", a: "Because holding full, undistracted attention across a 40\u201360 minute breath sequence takes years of practice to develop \u2014 \u015a\u016bnya builds the underlying capacity for sustained focus that the kriya itself requires." },
+    { q: "What two measured physiological effects does the practice of Shambhavi Mahamudra show, per the notes?", a: "A significantly higher Cortisol Awakening Response (greater wakefulness) and elevated BDNF (supporting brain health and cognitive function), with meaningful shifts noted after roughly 90 days of consistent practice." },
+    { q: "In the karma seed-tree model, what are the five stages, in order?", a: "Sa\u1e43sk\u0101ra (seed) \u2192 V\u0101san\u0101 (sprout/tendency) \u2192 Habit/Action (tree) \u2192 Experience (fruit) \u2192 fresh sa\u1e43sk\u0101ras (new seeds), continuing the cycle." },
+    { q: "What are the three intensifiers that deepen a sa\u1e43sk\u0101ra, according to the notes?", a: "Repetition, strong emotion, and identification (the moment a thought or pattern becomes \u201cthis is me\u201d)." },
+    { q: "Which ko\u015bas does karma actually have a grip on, and which are beyond its reach?", a: "Karma affects the physical (annamaya), mental (manomaya), and energy (pr\u0101\u1e47amaya) ko\u015bas \u2014 but loses its hold entirely in the etheric (vij\u00f1\u0101namaya) and bliss (\u0101nandamaya) ko\u015bas." },
+    { q: "What is Karma Samyama, and what is it explicitly NOT?", a: "Sustained, silent meditative awareness applied directly to action, seeing clearly why one acts. It is NOT overanalyzing past events, dwelling in guilt, or intellectually reviewing mistakes \u2014 it requires real stillness, not more thinking." },
+    { q: "What is Praty\u0101h\u0101ra, and what classical image is used to explain it?", a: "The withdrawal of the senses \u2014 not suppressing them, but no longer letting them drag attention outward. The turtle image: legs (senses) are drawn in when needed, extended again when safe \u2014 non-engagement, not resistance." },
+    { q: "How do S\u0101dhan\u0101 and Up\u0101san\u0101 differ, and why does the tradition recommend both?", a: "S\u0101dhan\u0101 is discipline and inward practice (trains the mind and body); Up\u0101san\u0101 is devotion and surrender (softens the heart). S\u0101dhan\u0101 without Up\u0101san\u0101 risks becoming dry; Up\u0101san\u0101 without S\u0101dhan\u0101 can stay merely emotional." },
+    { q: "Name three distinct traditions cited as independently arriving at \u2018observe sensation\u2019 as the doorway to freedom.", a: "Any three of: the Upanishads, the Bhagavad G\u012bt\u0101, the Yoga S\u016btras, the Buddha (Vipassan\u0101), Ramana Maharshi, Kashmir Shaivism, the Tamil Siddhars, or Vivekananda." },
+    { q: "What is the stated purpose of the \u015a\u016bnya practice?", a: "To bring attention so fully to what is happening within \u2014 breath, heartbeat, the workings of pr\u0101\u1e47a \u2014 that with eyes closed, the outer world becomes mere imagery, letting the fundamental nature of life inside be prioritized above social or physical concerns." }
+  ];
+  const quizList = document.getElementById('quizList');
+  quiz.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'quiz-item';
+    div.innerHTML = `<div class="quiz-q"><span>${item.q}</span><span class="flip-hint">tap to reveal</span></div><div class="quiz-a">${item.a}</div>`;
+    div.addEventListener('click', () => div.classList.toggle('open'));
+    quizList.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
